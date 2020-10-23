@@ -11,7 +11,8 @@ class Data():
     def get_data(self):
         #self.dtf_cases = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv", sep=",")
         #self.dtf_deaths = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", sep=",")
-        
+        self.dtf_cases = dtf_cases
+        self.dtf_deaths = dtf_deaths
         self.countrylist = ["World"] + self.dtf_cases["Country/Region"].unique().tolist()
         #self.countrylist = ["World"] + self.dtf_cases["Province/State"].unique().tolist()
 
