@@ -31,7 +31,8 @@ app.title = config.name
 # Navbar
 navbar = dbc.Nav(className="nav nav-pills", children=[
     ## logo/home
-    dbc.NavItem(html.Img(src=app.get_asset_url("logo.PNG"), height="40px")),
+    #dbc.NavItem(html.Img(src=app.get_asset_url("logo.PNG"), height="40px")),
+    dbc.NavItem(html.Img(src=app.get_asset_url("logo2.png"), height="40px")),
     ## about
     dbc.NavItem(html.Div([
         dbc.NavLink("About", href="/", id="about-popover", active=False),
