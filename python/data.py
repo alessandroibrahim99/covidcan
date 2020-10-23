@@ -20,7 +20,8 @@ class Data():
     def group_by_country(dtf, country):
         #dtf = dtf.drop(['Province/State','Lat','Long'], axis=1).groupby("Country/Region").sum().T
         dtf = dtf.drop(['Country/Region','Lat','Long'], axis=1).groupby("Province/State").sum().T
-        dtf["World"] = dtf.sum(axis=1)
+        #dtf["World"] = dtf.sum(axis=1)
+        dtf["Canada"] = dtf.sum(axis=1)
         dtf = dtf[country]
         dtf.index = pd.to_datetime(dtf.index, infer_datetime_format=True)
         ts = pd.DataFrame(index=dtf.index, data=dtf.values, columns=["data"])
