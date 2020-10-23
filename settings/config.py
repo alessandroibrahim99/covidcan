@@ -4,7 +4,7 @@ import os
 
 
 ## App settings
-name = "Forecaster"
+name = "Forecaster - COVID19 CANADA"
 
 host = "0.0.0.0"
 
