@@ -1,2 +1,3 @@
-# covidcan
-https://covidcan.herokuapp.com/
+# Forecaster
+
+https://forecasterpom.herokuapp.com/
