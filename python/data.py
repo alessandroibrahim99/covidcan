@@ -1,25 +1,25 @@
 
 import pandas as pd
 
-df_cases1 = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv", sep=",")
-df_deaths1 = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", sep=",")
-df_cases = df_cases1.loc[df_cases1['Country/Region']== 'Canada']
-df_deaths = df_deaths1.loc[df_deaths1['Country/Region']== 'Canada']
+#df_cases1 = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv", sep=",")
+#df_deaths1 = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", sep=",")
+#df_cases = df_cases1.loc[df_cases1['Country/Region']== 'Canada']
+#df_deaths = df_deaths1.loc[df_deaths1['Country/Region']== 'Canada']
 
 class Data():
     
     def get_data(self):
-        #self.dtf_cases = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv", sep=",")
-        #self.dtf_deaths = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", sep=",")
+        self.dtf_cases = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv", sep=",")
+        self.dtf_deaths = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", sep=",")
         
-        #self.countrylist = ["World"] + self.dtf_cases["Country/Region"].unique().tolist()
-        self.countrylist = ["World"] + self.dtf_cases["Province/State"].unique().tolist()
+        self.countrylist = ["World"] + self.dtf_cases["Country/Region"].unique().tolist()
+        #self.countrylist = ["World"] + self.dtf_cases["Province/State"].unique().tolist()
 
     
     @staticmethod
     def group_by_country(dtf, country):
-        #dtf = dtf.drop(['Province/State','Lat','Long'], axis=1).groupby("Country/Region").sum().T
-        dtf = dtf.drop(['Country/Region','Lat','Long'], axis=1).groupby("Province/State").sum().T
+        dtf = dtf.drop(['Province/State','Lat','Long'], axis=1).groupby("Country/Region").sum().T
+        #dtf = dtf.drop(['Country/Region','Lat','Long'], axis=1).groupby("Province/State").sum().T
         dtf["World"] = dtf.sum(axis=1)
         #dtf["Canada"] = dtf.sum(axis=1)
         dtf = dtf[country]
