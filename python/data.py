@@ -13,14 +13,14 @@ class Data():
         #self.dtf_deaths = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", sep=",")
         self.dtf_cases = dtf_cases
         self.dtf_deaths = dtf_deaths
-        self.countrylist = ["World"] + self.dtf_cases["Country/Region"].unique().tolist()
-        #self.countrylist = ["World"] + self.dtf_cases["Province/State"].unique().tolist()
+        #self.countrylist = ["World"] + self.dtf_cases["Country/Region"].unique().tolist()
+        self.countrylist = ["World"] + self.dtf_cases["Province/State"].unique().tolist()
 
     
     @staticmethod
     def group_by_country(dtf, country):
-        dtf = dtf.drop(['Province/State','Lat','Long'], axis=1).groupby("Country/Region").sum().T
-        #dtf = dtf.drop(['Country/Region','Lat','Long'], axis=1).groupby("Province/State").sum().T
+        #dtf = dtf.drop(['Province/State','Lat','Long'], axis=1).groupby("Country/Region").sum().T
+        dtf = dtf.drop(['Country/Region','Lat','Long'], axis=1).groupby("Province/State").sum().T
         dtf["World"] = dtf.sum(axis=1)
         #dtf["Canada"] = dtf.sum(axis=1)
         dtf = dtf[country]
