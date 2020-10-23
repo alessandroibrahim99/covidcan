@@ -1,3 +1,3 @@
-# Forecaster
+# Covid - Canada
 
-https://forecasterpom.herokuapp.com/
+https://covidcan.herokuapp.com/
