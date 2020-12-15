@@ -1,2 +1,2 @@
 
-txt = "www.itforecasts.com"
+txt = "Select a province and see the forecast"
