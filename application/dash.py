@@ -35,9 +35,9 @@ navbar = dbc.Nav(className="nav nav-pills", children=[
     dbc.NavItem(html.Img(src=app.get_asset_url("logo2.png"), height="40px")),
     ## about
     dbc.NavItem(html.Div([
-        dbc.NavLink("Go to itforecasts.com", href="/", id="about-popover", active=False),
-        #dbc.Popover(id="about", is_open=False, target="about-popover", children=[
-        dbc.Popover(id="about", is_open=True, target="www.itforecasts.com", children=[
+        dbc.NavLink("Developed by itforecasts.com", href="/", id="about-popover", active=False),
+        dbc.Popover(id="about", is_open=False, target="about-popover", children=[
+        #dbc.Popover(id="about", is_open=False, target="www.itforecasts.com", children=[
             dbc.PopoverHeader("www.itforecasts.com"), dbc.PopoverBody(about.txt)
         ])
     ])),
