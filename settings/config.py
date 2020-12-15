@@ -14,7 +14,8 @@ debug = False
 
 contacts = "https://www.linkedin.com/in/alessandro-ibrahim-b24640a/"
 
-code = "https://github.com/alessandroibrahim99/covidcan"
+#code = "https://github.com/alessandroibrahim99/covidcan"
+code = "http://www.itforecasts.com/dist/index.html"
 
 fontawesome = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
 
